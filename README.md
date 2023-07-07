@@ -113,15 +113,22 @@ Quotes
 使用步骤
 ----------
 1. ### 引入maven依赖
-
-2. ### 实现数据提供接口
+    `Maven`:
+    ```xml
+    <dependency>
+        <groupId>io.github.lisim2023</groupId>
+        <artifactId>quotes</artifactId>
+        <version>1.0</version>
+    </dependency>
+    ```
+3. ### 实现数据提供接口
     数据提供接口没有默认实现<br>
     使用字典功能需要实现`DictDataProvider`, 见测试项目中的SysDictServiceImpl<br>
     使用引用功能需要实现`QuoteDataProvider`, 见测试项目中的SysRoleServiceImpl<br>
     <br>
     可以通过助手方法辅助完成数据缓存, 那么实现数据提供接口时只需从数据库查询<br>
     也可以将助手设置为不缓存(默认), 并在实现数据提供接口时应用现有缓存方案<br>
-3. ### 配置助手
+4. ### 配置助手
     仅使用引用功能, 配置引用助手`QuoteHelper`即可<br>
     仅使用字典功能, 配置字典助手`DictHelper`即可<br>
     两种功能都要使用则需要将两种助手组合为`ComboHelper`<br>
@@ -153,7 +160,7 @@ Quotes
    ````
    详见测试项目
 
-4. ### 调用助手方法追加数据
+5. ### 调用助手方法追加数据
     推荐定义切面, 在切面中统一处理<br>
     建议添加自定义标识用以区分, 避免影响其他功能.<br>
    简单示例:
@@ -165,7 +172,7 @@ Quotes
        @Resource
        ComboHelper comboHelper;
 
-       @Pointcut("execution(public * com.github.Lisim2023.quotes.test.modules..*.*Controller.*(..))")
+       @Pointcut("execution(public * io.github.Lisim2023.quotes.test.modules..*.*Controller.*(..))")
        public void quote() {
        }
 
@@ -182,7 +189,7 @@ Quotes
    }
    ```
 
-5. ### 在实体类中根据需要对属性标注注解
+6. ### 在实体类中根据需要对属性标注注解
 
 配置选项
 ----------

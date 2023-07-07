@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="io.github.Lisim2023.quotes.test.modules.system.mapper.SysDictMapper">
+
+    <!--    List<DictModel> queryDictData(List<String> dictCodeList);-->
+    <select id="queryDictData" resultType="io.github.lisim2023.quotes.dict.DictModel">
+        SELECT
+        dict.code as "code",
+        item.text as "label",
+        item.value as "value"
+        FROM
+        sys_dict_item item
+        LEFT JOIN sys_dict dict ON dict.id = item.dict_id
+        WHERE dict.del_flag = 0
+        and dict.enabled = 1
+        and item.enabled = 1
+        <if test="dictCodeList != null">
+            and dict.code IN (
+            <foreach collection="dictCodeList" item="dictCode" separator=",">
+                #{dictCode}
+            </foreach>
+            )
+        </if>
+        ORDER BY item.order_num
+    </select>
+
+
+</mapper>
