@@ -295,7 +295,7 @@ public class QuotesConfig {
     * `FastJsonAccessor` --- FastJson
     * `GsonAccessor` --- Gson
 
-    另行实现`CacheSerializer`接口即可自由扩展<br>
+    实现`CacheSerializer`接口即可自由扩展<br>
     <br>
     <font color = "red">注意</font>: 缓存方式与缓存序列化的泛型类型必须保持一致<br>
     当以其他类型实现了`CacheSerializer`接口时, 比如Map<br>
