@@ -27,7 +27,7 @@ Quotes
     }
     ```
     对roleUser表进行单表查询即可得到如下结果:<br>
-    <img src="https://github.com/Lisim2023/quotes/blob/master/images/quote_multiFields.png" />
+    <img src="https://raw.githubusercontent.com/Lisim2023/quotes/master/images/quote_multiFields.png" />
     
     * #### 属性值可以是多个值, 用逗号分隔, 示例：
     ```java
@@ -41,7 +41,7 @@ Quotes
     }
     ```
     同样仅需单表查询:<br>
-    <img src="https://github.com/Lisim2023/quotes/blob/master/images/quote_multiValues.png" />
+    <img src="https://raw.githubusercontent.com/Lisim2023/quotes/master/images/quote_multiValues.png" />
 
 * ### 使用 @Dict注解 描述数据字典
 
@@ -62,7 +62,7 @@ Quotes
     ```
   
     效果:<br>
-    <img src="https://github.com/Lisim2023/quotes/blob/master/images/dict_multiValues.png" />
+    <img src="https://raw.githubusercontent.com/Lisim2023/quotes/master/images/dict_multiValues.png" />
 
     * #### @Dict注解 可以对引用来的值使用
     需要对引用来的值预定义属性,<br>
@@ -90,7 +90,7 @@ Quotes
     }
     ```
     效果:<br>
-    <img src="https://github.com/Lisim2023/quotes/blob/master/images/dict_afterQuote.png" />
+    <img src="https://raw.githubusercontent.com/Lisim2023/quotes/master/images/dict_afterQuote.png" />
   
 
 * ### 递归标记 @AlsoQuote
